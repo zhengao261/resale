@@ -1,0 +1,159 @@
+body {
+    overflow: hidden;
+}
+.head {
+    height:30px;
+    background-color: RGB(128,10,26);
+    position: relative;
+    padding:5px;
+
+}
+.head-title{
+    text-align: center;
+    color:white;
+    font-size: 18px;
+    line-height: 30px;
+}
+.staff-exit{
+    position: absolute;
+    width:90px;
+    height:30px;
+    top: 5px;
+    right:10px;
+}
+.staff-msg {
+    height: 40px;
+    /*background-color: #cccccc;*/
+    border-bottom:1px solid #e8e8e8;
+    box-shadow: rgba(0,0,0,.1) 0 1px 5px;
+    overflow: hidden;
+}
+.msg-time {
+    display: inline-block;
+    /*background-color: #FF6699;*/
+    font-size: 15px;
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+
+
+}
+.msg-name {
+    display: inline-block;
+    /*background-color: darkcyan;*/
+    font-size: 15px;
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+
+}
+.msg-home{
+    display: inline-block;
+    /*background-color: darkcyan;*/
+    font-size: 15px;
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+}
+.vip {
+    font-size: 15px;
+    height: auto;
+    width:100%;
+    overflow: hidden;
+    /*background-color: green;*/
+
+}
+.vip-num {
+    height: 50px;
+    line-height:50px;
+    width:100%;
+    overflow: hidden;
+}
+.vip-text {
+    margin-left: 30px;
+
+}
+.vip-phone {
+    background-color: darkgray;
+    padding: 1px 15px;
+    border-radius: 2px;
+    cursor: no-drop;
+    margin-left:10px;
+}
+.vip input {
+    height: 20px;
+    margin-left: 20px;
+}
+.vip-button {
+    width: 100px;
+    height: 25px;
+    background-color: RGB(128,10,26);
+    color: white;
+    border: 1px solid RGB(128,10,26);
+    margin-left: 11px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.vip-msg {
+
+    background-color: rgb(225,226,228);
+    height: 100px;
+    width:100%;
+    line-height: 50px;
+    overflow: hidden;
+
+}
+.msg-first {
+    height: 50px;
+
+    line-height: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+.f-name {
+    display: inline;
+    margin-left:30px;
+
+}
+.f-phone {
+    display: inline;
+    margin-left:30px;
+}
+.star {
+    color: red;
+    font-size: 15px;
+    line-height: 25px;
+}
+.msg-second {
+    height: 50px;
+    line-height: 50px;
+    margin-left: 30px;
+
+}
+.s-address {
+    overflow: hidden;
+    display: inline;
+}
+.s-address input {
+
+    width:270px;
+}
+.s-accept {
+
+    display: inline;
+    margin-left: 30px;
+
+}
+.trade {
+    width:70%;
+    height:300px;
+    background-color: #cccccc;
+    margin:0px auto;
+}
+.trade-tab,tr,td,thead{
+    border:1px solid black;
+
+}
