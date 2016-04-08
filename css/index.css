@@ -23,7 +23,7 @@ body {
 }
 .staff-msg {
     height: 40px;
-    /*background-color: #cccccc;*/
+
     border-bottom:1px solid #e8e8e8;
     box-shadow: rgba(0,0,0,.1) 0 1px 5px;
     overflow: hidden;
@@ -98,7 +98,7 @@ body {
     cursor: pointer;
 }
 .vip-msg {
-
+    border: 1px solid burlywood;
     background-color: rgb(225,226,228);
     height: 100px;
     width:100%;
@@ -148,12 +148,89 @@ body {
 
 }
 .trade {
-    width:70%;
-    height:300px;
-    background-color: #cccccc;
-    margin:0px auto;
-}
-.trade-tab,tr,td,thead{
-    border:1px solid black;
+    width:90%;
+    height:200px;
+    /*background-color: #cccccc;*/
+    margin:10px auto;
+    overflow: scroll;
 
+
+;
+
+}
+td,thead{
+    border:1px solid #cccccc;
+    text-align: center;
+
+}
+thead {
+    background-color: rgb(117, 118, 119);
+    color: white;
+    text-align: center;
+}
+.trade-tab{
+
+    width:90%;
+    margin:0 auto;
+
+    font-size: 15px;
+
+}
+td {
+    height:30px;
+}
+.money {
+    background-color: #cccccc;
+    height: 50px;
+    font-size: 17px;
+    position: relative;
+    margin-top: 25px;
+}
+.mon-should {
+    display: inline;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    right:40%;
+}
+.mon-sub {
+    display: inline;
+    height:50px;
+    line-height:50px;
+    right:25px;
+    position: absolute;
+}
+.sub-btn {
+    width: 100px;
+    height:25px;
+    background-color:RGB(174,10,49);
+    border:1px solid RGB(174,10,49);
+    border-radius: 3px;
+    color:white;
+    font-size: 13px;
+    cursor: pointer;
+}
+.should-text {
+    color:RGB(174,10,49);
+}
+.foot {
+    display: block;
+    background-color: RGB(128,10,26);
+    position: fixed;
+    bottom:0;
+    width:100%;
+    height:50px;
+    line-height:50px;
+}
+.foot-style {
+    color: white;
+    text-align: center;
+
+}
+.foot-style a {
+    text-decoration: none;
+    color: white;
+}
+.foot-style a:hover {
+    color: grey;
 }
