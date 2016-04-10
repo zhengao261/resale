@@ -5,7 +5,8 @@
     <title>收银系统</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css">
     <link rel="stylesheet" href="css/index.css" type="text/css">
-
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 
 </head>
 <body>
@@ -16,7 +17,7 @@
     <section class="staff-msg">
         <div class="msg-time">
             <span>当前时间:</span>
-            <span>2016年04月08日 15:27:12</span>
+            <span id="set-time"></span>
         </div>
         <div class="msg-name">
             <span>员工:</span>
@@ -31,32 +32,32 @@
         <div class="vip-num">
             <span class="vip-text">会员账号:</span>
             <span class="vip-phone" >手机号码:</span>
-            <input type="text" placeholder="请输入账号!">
-            <button class="vip-button">获取会员信息</button>
+            <input type="text" placeholder="请输入账号!" id="vipNum">
+            <button class="vip-button" id="getVip">获取会员信息</button>
         </div>
         <div class="vip-msg">
             <div class="msg-first">
                 <div class="f-name">
                     <span class="star">*</span>
                     <span>姓名:</span>
-                    <input type="text" value="" name="">
+                    <input type="text" name="" id="msg-name">
                 </div>
                 <div class="f-phone">
                     <span class="star">*</span>
                     <span>手机号码:</span>
-                    <input type="text" value="" name="" >
+                    <input type="text" value="" name="" id="msg-phone">
                 </div>
             </div>
             <div class="msg-second">
                 <div class="s-address">
                     <span class="star">*</span>
                     <span class="add-add">地址:天津市天津理工大学</span>
-                    <input type="text">
+                    <input type="text" value="" name="" id="msg-address">
                 </div>
                 <div class="s-accept">
                     <span class="star">*</span>
                     <span class="acc-name">收货人:</span>
-                    <input type="text">
+                    <input type="text" id="msg-accept">
                 </div>
             </div>
         </div>
@@ -123,6 +124,9 @@
 
     </section>
     <section class="money">
+        <div class="key-input">
+            <input type="text" placeholder="请输入商品编码">
+        </div>
         <div class="mon-should">
             <span>应付金额:</span>
             <span class="should-text">¥206.00元</span>
@@ -133,8 +137,11 @@
     </section>
     <section class="foot">
         <p class="foot-style">
-            CopyRight © 2016 by <a href="http://www.houqin100.com">houqin100.com</a>
+            CopyRight © 2016 by <a href="http://www.houqin100.com" target="_blank">houqin100.com</a>
+
         </p>
     </section>
+
+
 </body>
 </html>
