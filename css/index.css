@@ -82,6 +82,8 @@ body {
     border-radius: 2px;
     cursor: no-drop;
     margin-left:10px;
+    color: white;
+
 }
 .vip input {
     height: 20px;
@@ -96,6 +98,10 @@ body {
     margin-left: 11px;
     border-radius: 2px;
     cursor: pointer;
+}
+.vip-button:hover {
+    color: #cccccc;
+
 }
 .vip-msg {
     border: 1px solid burlywood;
@@ -153,10 +159,13 @@ body {
     /*background-color: #cccccc;*/
     margin:10px auto;
     overflow: scroll;
-
-
-;
-
+}
+.remove {
+    color: red;
+    cursor: pointer;
+}
+.remove:hover {
+    color: rgb(128,10,26);
 }
 td,thead{
     border:1px solid #cccccc;
@@ -210,6 +219,10 @@ td {
     font-size: 13px;
     cursor: pointer;
 }
+.sub-btn:hover {
+    color: #cccccc;
+
+}
 .should-text {
     color:RGB(174,10,49);
 }
@@ -233,4 +246,16 @@ td {
 }
 .foot-style a:hover {
     color: grey;
+}
+.key-input {
+    display: inline;
+    width:150px;
+    height:30px;
+    line-height:50px;
+    position: absolute;
+    left:100px;
+}
+.key-input input {
+    width: 150px;
+    height:30px;
 }
