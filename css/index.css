@@ -249,7 +249,7 @@ td {
 }
 .key-input {
     display: inline;
-    width:150px;
+    width:220px;
     height:30px;
     line-height:50px;
     position: absolute;
@@ -259,3 +259,16 @@ td {
     width: 150px;
     height:30px;
 }
+.money-button {
+    height: 34px;
+    width: 40px;
+    margin-left: 10px;
+    background-color:RGB(174,10,49);
+    border:1px solid RGB(174,10,49);
+    color: white;
+    border-radius:3px
+}
+.money-button:hover{
+    color:#cccccc;
+}
+
