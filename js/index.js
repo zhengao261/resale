@@ -65,13 +65,53 @@ $(function(){
                 '<tr> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td>'+tradeData.tradePrice+'</td> <td class="remove" id="remove">移除</td> </tr>';
 
             $("#trade-table").append(aa);
+            $("#trade-num").val("");
+            $("#trade-num").focus();
+            serial();
         }else {
             alert("编码:"+tradeNum+"未找到")
             //console.log("编码:"+tradeNum+"未找到");
         }
 
     });
-    //给表格添加序号
+    //给扫描条码添加回车事件
+    $("#trade-num").keyup(function(){
+        if(event.keyCode == 13){
+            var tradeNum = $("#trade-num").val();
+            console.log(tradeNum);
+            //ajax 返回对应条形码的商品信息
+            if(tradeNum == "1"){
+                var tradeData = {tradeNum:1,tradeName:"小浣熊1+1",tradePrice:"0.50"}
+                //console.log(tradeData.tradeName);
+                var aa =
+                    '<tr> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td>'+tradeData.tradePrice+'</td> <td class="remove" id="remove">移除</td> </tr>';
+
+                $("#trade-table").append(aa);
+                $("#trade-num").val("");
+                $("#trade-num").focus();
+                serial();
+            }else {
+                if($("#trade-num").val() == ""){
+                    alert("请输入或扫描条形码");
+                }else {
+                    alert("商品条形码:"+tradeNum+"未找到")
+
+                }
+
+                //console.log("编码:"+tradeNum+"未找到");
+            }
+        }
+    });
+    //给表格商品添加序号
+    function serial(){
+        //获取表格序号
+        var len = $('table tr').length;
+        for(var i = 1;i<len;i++){
+            $('table tr:eq('+i+') td:first').text(i);
+        }
+    }
+
+
 
 
 });
