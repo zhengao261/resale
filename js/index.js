@@ -52,5 +52,26 @@ $(function(){
 
            }
        })
-   })
+    });
+    //扫码加载商品信息
+    $("#add-trade").on('click',function(){
+        var tradeNum = $("#trade-num").val();
+        console.log(tradeNum);
+        //ajax 返回对应条形码的商品信息
+        if(tradeNum == "1"){
+            var tradeData = {tradeNum:1,tradeName:"小浣熊1+1",tradePrice:"0.50"}
+            //console.log(tradeData.tradeName);
+            var aa =
+                '<tr> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td>'+tradeData.tradePrice+'</td> <td class="remove" id="remove">移除</td> </tr>';
+
+            $("#trade-table").append(aa);
+        }else {
+            alert("编码:"+tradeNum+"未找到")
+            //console.log("编码:"+tradeNum+"未找到");
+        }
+
+    });
+    //给表格添加序号
+
+
 });

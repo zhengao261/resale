@@ -5,7 +5,7 @@
     <title>收银系统</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css">
     <link rel="stylesheet" href="css/index.css" type="text/css">
-    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 
 </head>
@@ -40,12 +40,12 @@
                 <div class="f-name">
                     <span class="star">*</span>
                     <span>姓名:</span>
-                    <input type="text" name="" id="msg-name">
+                    <input type="text" id="msg-name">
                 </div>
                 <div class="f-phone">
                     <span class="star">*</span>
                     <span>手机号码:</span>
-                    <input type="text" value="" name="" id="msg-phone">
+                    <input type="text" id="msg-phone">
                 </div>
             </div>
             <div class="msg-second">
@@ -63,7 +63,7 @@
         </div>
     </section>
     <section class="trade">
-        <table class="trade-tab">
+        <table class="trade-tab" id="trade-table">
             <thead>
                 <td width="5%">#</td>
                 <td width="15%">商品编号</td>
@@ -71,61 +71,14 @@
                 <td width="20%">价格</td>
                 <td width="20%">移除</td>
             </thead>
-            <tr>
-                <td>1</td>
-                <td>123123123123</td>
-                <td>小浣熊方便面</td>
-                <td>¥100.0</td>
-                <td class="remove" id="remove">移除</td>
-
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>123123123123</td>
-                <td>小浣熊方便面</td>
-                <td>¥100.0</td>
-                <td>移除</td>
-
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>123123123123</td>
-                <td>小浣熊方便面</td>
-                <td>¥100.0</td>
-                <td>移除</td>
-
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>123123123123</td>
-                <td>小浣熊方便面</td>
-                <td>¥100.0</td>
-                <td>移除</td>
-
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>123123123123</td>
-                <td>小浣熊方便面</td>
-                <td>¥100.0</td>
-                <td>移除</td>
-
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>123123123123</td>
-                <td>小浣熊方便面</td>
-                <td>¥100.0</td>
-                <td>移除</td>
-
-            </tr>
 
         </table>
 
     </section>
     <section class="money">
         <div class="key-input">
-            <input type="text" placeholder="请输入商品编码">
+            <input type="text" placeholder="请输入商品编码" id="trade-num">
+            <button class="money-button" id="add-trade">添加</button>
         </div>
         <div class="mon-should">
             <span>应付金额:</span>
@@ -141,7 +94,5 @@
 
         </p>
     </section>
-
-
 </body>
 </html>
