@@ -61,13 +61,15 @@ $(function(){
         if(tradeNum == "1"){
             var tradeData = {tradeNum:1,tradeName:"小浣熊1+1",tradePrice:"0.50"}
             //console.log(tradeData.tradeName);
-            var aa =
-                '<tr> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td>'+tradeData.tradePrice+'</td> <td class="remove" id="remove">移除</td> </tr>';
+            var newRow =
+                '<tr> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td class="trade-money">'+tradeData.tradePrice+'</td> <td class="remove">移除</td> </tr>';
 
-            $("#trade-table").append(aa);
+            $("#trade-table").append(newRow);
             $("#trade-num").val("");
             $("#trade-num").focus();
-            serial();
+            showMoney();//更改钱数显示
+            serial();//更改序号显示
+
         }else {
             alert("编码:"+tradeNum+"未找到")
             //console.log("编码:"+tradeNum+"未找到");
@@ -83,13 +85,15 @@ $(function(){
             if(tradeNum == "1"){
                 var tradeData = {tradeNum:1,tradeName:"小浣熊1+1",tradePrice:"0.50"}
                 //console.log(tradeData.tradeName);
-                var aa =
-                    '<tr> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td>'+tradeData.tradePrice+'</td> <td class="remove" id="remove">移除</td> </tr>';
+                var newRow =
+                    '<tr> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td class="trade-money">'+tradeData.tradePrice+'</td> <td class="remove">移除</td> </tr>';
 
-                $("#trade-table").append(aa);
+                $("#trade-table").append(newRow);
                 $("#trade-num").val("");
                 $("#trade-num").focus();
-                serial();
+                showMoney();//更改钱数显示
+                serial();//更改序号显示
+
             }else {
                 if($("#trade-num").val() == ""){
                     alert("请输入或扫描条形码");
@@ -110,7 +114,24 @@ $(function(){
             $('table tr:eq('+i+') td:first').text(i);
         }
     }
+    //点击移除删除整行
 
+    //修改应付金额显示
+    function showMoney() {
+
+        //调取显示金额
+        var len = $("tbody td.trade-money").length;
+        var money = 0;
+        var eMoney = parseFloat($("tbody td.trade-money").text());
+
+        for(var i =0;i<len;i ++){
+            money += eMoney;
+        }
+        money = money.toFixed(2);
+        $("#should-money").text("¥"+money+"元");//设置显示格式
+
+    }
+    
 
 
 
