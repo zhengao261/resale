@@ -56,19 +56,14 @@ $(function(){
     //扫码加载商品信息
     $("#add-trade").on('click',function(){
         var tradeNum = $("#trade-num").val();
-        console.log(tradeNum);
+        //console.log(tradeNum);
         //ajax 返回对应条形码的商品信息
         if(tradeNum == "1"){
-            var tradeData = {tradeNum:1,tradeName:"小浣熊1+1",tradePrice:"0.50"}
-            //console.log(tradeData.tradeName);
-            var newRow =
-                '<tr> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td class="trade-money">'+tradeData.tradePrice+'</td> <td class="remove">移除</td> </tr>';
-
-            $("#trade-table").append(newRow);
-            $("#trade-num").val("");
-            $("#trade-num").focus();
+            addRow();
             showMoney();//更改钱数显示
             serial();//更改序号显示
+
+
 
         }else {
             alert("编码:"+tradeNum+"未找到")
@@ -80,19 +75,14 @@ $(function(){
     $("#trade-num").keyup(function(){
         if(event.keyCode == 13){
             var tradeNum = $("#trade-num").val();
-            console.log(tradeNum);
+            //console.log(tradeNum);
             //ajax 返回对应条形码的商品信息
             if(tradeNum == "1"){
-                var tradeData = {tradeNum:1,tradeName:"小浣熊1+1",tradePrice:"0.50"}
-                //console.log(tradeData.tradeName);
-                var newRow =
-                    '<tr> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td class="trade-money">'+tradeData.tradePrice+'</td> <td class="remove">移除</td> </tr>';
 
-                $("#trade-table").append(newRow);
-                $("#trade-num").val("");
-                $("#trade-num").focus();
+                addRow();
                 showMoney();//更改钱数显示
                 serial();//更改序号显示
+
 
             }else {
                 if($("#trade-num").val() == ""){
@@ -113,9 +103,30 @@ $(function(){
         for(var i = 1;i<len;i++){
             $('table tr:eq('+i+') td:first').text(i);
         }
+
     }
     //点击移除删除整行
 
+    $("#trade-table").delegate(".remove","click",function(event){
+        //console.log(event.target);
+        document.querySelector("#trade-table tbody").removeChild(event.target.parentNode);
+        serial(); // 重新排序
+        //console.log(event.target.parentNode);
+    })
+    var myCount = 0;
+    function addRow () {
+        var tradeData = {tradeNum:1,tradeName:"小浣熊1+1",tradePrice:"0.50"};
+        myCount ++;
+        //console.log(myCount);
+        var newRow =
+            '<tr id="option'+myCount+'"> <td>1</td> <td>'+tradeData.tradeNum+'</td> <td>'+tradeData.tradeName+'</td> <td class="trade-money">'+tradeData.tradePrice+'</td> <td class="remove" >移除</td> </tr>';
+
+        $("#trade-table").append(newRow);
+        $("#trade-num").val("");
+        $("#trade-num").focus();
+
+
+    }
     //修改应付金额显示
     function showMoney() {
 
@@ -129,9 +140,24 @@ $(function(){
         }
         money = money.toFixed(2);
         $("#should-money").text("¥"+money+"元");//设置显示格式
+        return money;
 
     }
-    
+    //立即支付按键 所有属性.
+    //获取所有的商品节点,获取总价格
+    $("#mon-pay").on("click",function(){
+        var payArr = new Array;
+        var len = $('table tr').length - 1 ;
+        //alert(len);
+        for(var i = 0; i < len;i ++){
+            payArr[i] = $('table tr')[1].childNodes[3].innerHTML;
+        }
+
+        var tradeMon = showMoney(); // 获取showMoney()函数返回值  是订单总金钱
+        payArr['tradeMon'] = tradeMon;
+        console.log(payArr);
+        //ajax传递订单详情.然后就可以完成订单了.
+    });
 
 
 
